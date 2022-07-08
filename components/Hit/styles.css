@@ -1,0 +1,45 @@
+/* .ais-Hit-list {
+  @apply grid grid-cols-4 gap-4;
+} */
+
+.ais-Hits-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 30%;
+}
+
+.ais-Hits-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ais-Pagination-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.ais-Pagination-link {
+  margin: 0 5px;
+  color: blue;
+}
+
+.ais-RefinementList-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ais-RefinementList-item {
+  margin: 5px;
+}
+
+.ais-RefinementList-checkbox {
+  margin-right: 5px;
+}
+
+.ais-RefinementList-count {
+  color: blue;
+  font-weight: 700;
+}
