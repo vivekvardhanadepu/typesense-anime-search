@@ -42,6 +42,7 @@ const main = async () => {
       {
         name: "type",
         type: "string",
+        facet: true,
       },
       {
         name: "episodes",
@@ -50,6 +51,7 @@ const main = async () => {
       {
         name: "status",
         type: "string",
+        facet: true,
       },
     ],
   };

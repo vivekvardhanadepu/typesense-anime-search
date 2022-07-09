@@ -7,15 +7,16 @@ interface Props {
 }
 
 const SearchBox = ({ currentRefinement, refine }: Props) => (
-  <div className="mb-4">
-    <input
-      className="shadow appearance-none border rounded
-     w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-      type="search"
-      placeholder="Search"
-      value={currentRefinement}
-      onChange={(event) => refine(event.currentTarget.value)}
-    />
+  <div className="flex items-center justify-center">
+    <div className="flex border-2 border-gray-200 rounded">
+      <input
+        className="px-4 py-2 w-80"
+        type="search"
+        placeholder="Search"
+        value={currentRefinement}
+        onChange={(event) => refine(event.currentTarget.value)}
+      />
+    </div>
   </div>
 );
 

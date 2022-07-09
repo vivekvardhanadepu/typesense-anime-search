@@ -7,49 +7,42 @@ interface Props {
 }
 
 const Hit = ({ hit }: Props) => {
-  console.log("hit", hit);
-  console.log("wadha");
-  // return (
-  //   <div className="bg-gray-50 border">
-  //     <Image src={hit.picture} height={148} width={96} alt={hit.name} />
-  //     <h3 className="truncate">{hit.title}</h3>
-  //   </div>
-  // );
   return (
-    <div className="flex flex-col space-y-3 m-5 border p-3">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img className="w-32 h-40 self-center" src={hit.picture} alt={hit.name} />
-      <div>
-        <h1 className="text-lg font-bold">{hit.title}</h1>
+    <figure className="md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800 h-52">
+      <div className="relative w-24 md:w-48 md:rounded-none rounded-full">
+        <Image src={hit.picture} alt={hit.title} layout="fill" />
       </div>
-      <div className="flex flex-wrap space-x-4 truncate">
-        {hit.sources.map((item: any, index: number) => {
-          return (
-            <a href={item} key={index}>
-              Link {index}
-            </a>
-          );
-        })}
+
+      <div className="flex-col pt-6 md:p-8 text-center md:text-left space-y-4">
+        <blockquote>
+          <p className="text-base font-medium text-stone-800 dark:text-blue-600">
+            {hit.title}
+          </p>
+        </blockquote>
+        <figcaption className="font-medium">
+          <div>
+            <div className="text-sm text-cyan-500 dark:text-cyan-700">
+              Links:{" "}
+              {hit.sources.map((url: string, index: number) => {
+                return (
+                  <a
+                    className="text-sm text-sky-500 dark:text-sky-400"
+                    href={url}
+                    key={index}
+                  >
+                    <u>{index}</u>{" "}
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="text-sm text-slate-700 dark:text-slate-500">
+            Episodes: {hit.episodes}
+          </div>
+        </figcaption>
       </div>
-      <div className="flex flex-row space-x-2 items-baseline">
-        <h1 className="text-lg font-bold">Episodes: </h1>
-        <p>{hit.episodes}</p>
-      </div>
-      <div>
-        <div className="truncate">
-          {hit.tags.map((tag: string, index: number) => {
-            return (
-              <div
-                className="ml-4 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-blue-200 text-blue-700 rounded-full"
-                key={index}
-              >
-                {tag}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </div>
+    </figure>
   );
 };
 
