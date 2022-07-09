@@ -8,7 +8,7 @@ interface Props {
 }
 
 const SearchBox = ({ currentRefinement, refine }: Props) => (
-  <div className="flex items-center justify-between px-5 pb-5 bg-orange-300">
+  <div className="flex items-center justify-between px-5 py-8 mb-5 bg-orange-300">
     <div className="flex">
       <h1 className="font-serif text-5xl">Typesense anime-search demo</h1>
 
@@ -16,7 +16,7 @@ const SearchBox = ({ currentRefinement, refine }: Props) => (
         className="self-end"
         href="https://github.com/vivekvardhanadepu/typesense-anime-search"
       >
-        <p className="text-blue-300">[s]</p>
+        <p className="text-blue-300">[source]</p>
       </Link>
     </div>
 

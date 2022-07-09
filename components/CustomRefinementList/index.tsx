@@ -14,7 +14,6 @@ const RefinementList = ({
   isFromSearch,
   refine,
   searchForItems,
-  createURL,
 }: Props) => (
   <ul>
     <li>
@@ -23,10 +22,10 @@ const RefinementList = ({
         onChange={(event) => searchForItems(event.currentTarget.value)}
       />
     </li>
-    {items.map((item) => (
+    {items.map((item: any) => (
       <li key={item.label}>
         <a
-          href={createURL(item.value)}
+          href="#"
           style={{ fontWeight: item.isRefined ? "bold" : "" }}
           onClick={(event) => {
             event.preventDefault();
@@ -37,7 +36,8 @@ const RefinementList = ({
             <Highlight attribute="label" hit={item} />
           ) : (
             item.label
-          )}
+          )}{" "}
+          ({item.count})
         </a>
       </li>
     ))}

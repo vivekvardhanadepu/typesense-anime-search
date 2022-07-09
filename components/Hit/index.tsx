@@ -8,11 +8,10 @@ interface Props {
 
 const Hit = ({ hit }: Props) => {
   return (
-    <figure className="md:flex bg-slate-100 rounded-xl p-8 md:p-0 h-52">
-      <div className="relative w-24 md:w-48 md:rounded-none rounded-full">
+    <figure className="md:flex bg-slate-100 rounded-xl h-52">
+      <div className="relative w-48 md:rounded-none rounded-full">
         <Image src={hit.picture} alt={hit.title} layout="fill" />
       </div>
-
       <div className="flex-col pt-6 md:p-8 text-center md:text-left space-y-4">
         <blockquote>
           <p className="text-base font-medium text-stone-800">{hit.title}</p>

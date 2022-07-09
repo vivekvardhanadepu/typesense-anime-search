@@ -7,6 +7,7 @@ import {
   RefinementList,
 } from "react-instantsearch-dom";
 import TypesenseInstantsearchAdapter from "typesense-instantsearch-adapter";
+import CustomClearRefinements from "../components/CustomClearRefinements";
 
 // Local dependencies
 import CustomSearchBox from "../components/CustomSearchBox";
@@ -30,7 +31,7 @@ const typesenseInstantSearchAdapter = new TypesenseInstantsearchAdapter({
 
 const Home: NextPage = () => {
   return (
-    <div className="bg-zinc-300 py-5">
+    <div className="py-5 pb-8">
       <InstantSearch
         indexName="animes"
         searchClient={typesenseInstantSearchAdapter.searchClient}
@@ -38,27 +39,25 @@ const Home: NextPage = () => {
         <Configure hitsPerPage={9} />
         <CustomSearchBox />
         <div className="flex px-5 justify-between">
-          <aside className="hidden fixed inset-0 z-20 flex-none w-80 h-full lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-48 lg:block">
-            <div className="py-5">
-              <p className="font-serif text-4xl font-medium">Filter by tags</p>
-              <RefinementList
-                className="border border-solid border-orange-400 rounded drop-shadow-2xl"
-                attribute="tags"
-              />
+          <div className="w64">
+            <div className="flex justify-between py-8">
+              <p className="text-base font-bold">Filters</p>{" "}
+              <CustomClearRefinements />
             </div>
 
             <div className="py-5">
-              <p className="font-serif text-4xl font-medium">Filter by Type</p>
-              <RefinementList
-                attribute="type"
-                className="border border-black rounded drop-shadow-2xl"
-              />
+              <p className="font-serif text-4xl font-medium">Tags</p>
+              <RefinementList className="drop-shadow-2xl" attribute="tags" />
             </div>
-          </aside>
-          <main className="w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
+            <div className="py-8">
+              <p className="font-serif text-4xl font-medium">Type</p>
+              <RefinementList attribute="type" className="drop-shadow-2xl" />
+            </div>
+          </div>
+          <div>
             <Hits hitComponent={Hit} />
             <Pagination />
-          </main>
+          </div>
         </div>
       </InstantSearch>
     </div>

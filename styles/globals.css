@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+ul.ais-Hits-list {
+  justify-content: space-between;
+  column-gap: 0px;
+  width: 1100px;
+}
+
+.w64 {
+  width: 260px;
+}
