@@ -59,7 +59,7 @@ const main = async () => {
   await client.collections("animes").delete();
   await client.collections().create(animeSchema);
 
-  const animesInJsonL = await fs.readFile("anime.jsonl", "utf8");
+  const animesInJsonL = await fs.readFile("./anime.jsonl", "utf8");
   client.collections("animes").documents().import(animesInJsonL);
 };
 
