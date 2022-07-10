@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export"
+    "export": "next export",
+    "typesenseServer": "docker run -d -p 8108:8108 -v /tmp:/data typesense/typesense --data-dir /data --api-key=xyz --enable-cors",
+    "indexer": "cd data && node loadSchema.js"
   },
   "dependencies": {
     "@types/react-instantsearch-dom": "^6.12.3",
