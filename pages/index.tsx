@@ -31,14 +31,14 @@ const typesenseInstantSearchAdapter = new TypesenseInstantsearchAdapter({
 
 const Home: NextPage = () => {
   return (
-    <div className="py-5 pb-8">
+    <div className="py-5 pb-8 bg-orange-200">
       <InstantSearch
         indexName="animes"
         searchClient={typesenseInstantSearchAdapter.searchClient}
       >
         <Configure hitsPerPage={9} />
         <CustomSearchBox />
-        <div className="flex px-5 justify-between">
+        <div className="flex px-5 justify-between bg-orange-200">
           <div className="w64">
             <div className="flex justify-between py-8">
               <p className="text-base font-bold">Filters</p>{" "}
