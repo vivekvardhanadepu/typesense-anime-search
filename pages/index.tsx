@@ -15,12 +15,12 @@ import Hit from "../components/Hit";
 
 const typesenseInstantSearchAdapter = new TypesenseInstantsearchAdapter({
   server: {
-    apiKey: "xyz",
+    apiKey: process.env.NEXT_PUBLIC_TYPESENSE_SEARCH_ONLY_API_KEY,
     nodes: [
       {
-        host: "localhost",
-        port: 8108,
-        protocol: "http",
+        host: process.env.NEXT_PUBLIC_TYPESENSE_HOST,
+        port: process.env.NEXT_PUBLIC_TYPESENSE_PORT,
+        protocol: process.env.NEXT_PUBLIC_TYPESENSE_PROTOCOL,
       },
     ],
   },
