@@ -3,8 +3,6 @@
 This is a demo [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) that shows how you can use [Typesense's](https://github.com/typesense/typesense) feature set,
 to build a anime search website
 
-Live(deployed on Vercel): <https://typesense-anime-search.vercel.app/>
-
 ## Prerequisites
 
 - [docker](https://docs.docker.com/desktop/)
